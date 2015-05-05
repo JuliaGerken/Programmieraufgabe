@@ -30,7 +30,7 @@ if isempty(right) == 0  %%Bedingung für Ausgabe
         ' wird/werden von folgenden Sprecher im jeweiligen Satz verwendet:'];
      
     %Erstellung von figure
-    f = figure('Position',[440 500 461 146]);
+    f = figure('Position',[440 500 600 400]);
     columnformat = {'numeric','bank','logical'};
     
     %Erzeugung neuer Spalte zur Indizierung der Tickbox
@@ -46,13 +46,10 @@ if isempty(right) == 0  %%Bedingung für Ausgabe
                 'CellEditCallback', {@playCheckedFile,right},...%Benutzerkontrollierter Aufruf
                  'Position', [20 20 700 300]);                %Postion von Tabelle
         
-    %Ausrichtung von Tabelle
-    tableextent = get(t,'Extent');
-    oldposition = get(t,'Position');
-    newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)];
-    set(t, 'Position', newposition);
-    
-    %Erstellung und Ausrichtung von Überschrift
-    uicontrol('style', 'text', 'string', Ausgabe1, 'position', [newposition(1) ...
-        newposition(1)+newposition(4) newposition(3) 50])
+
+      %Erstellung und Ausrichtung von Überschrift
+      oldposition = get(t,'Position');
+      uicontrol('style', 'text', 'string', Ausgabe1, 'position', [oldposition(1) ...
+      oldposition(1)+oldposition(4) oldposition(3) 50])
 end    
+   
