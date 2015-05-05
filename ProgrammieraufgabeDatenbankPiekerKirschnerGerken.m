@@ -5,7 +5,7 @@
 % Zum Ausführen des Skripts werden folgende Funktionen benötigt:
 %   Satz.m
 %   Phonem.m
-%   sp.m
+%   Sprecher.m
 % Als Eingaben können erfolgen:
 % Anzahl der Suchbegriffe = 1 oder 2
 % Sprecher = Sprecher, Wort = Wort, Satz = Satz, Phonem= Phonem
@@ -89,7 +89,7 @@ if strcmp(mehr, '1')
     % und führt, falls vorhanden, die Funktion sp für das Cell-Array wort
     % durch
     if strcmp(Gegenstand, 'Sprecher');
-        sp(wort,sentence);
+        Sprecher(wort,sentence);
         % Setzt Flag auf Null, wenn Bedingung eingetroffen
         EingabenKontrolle = 0;
     end
@@ -113,11 +113,9 @@ if strcmp(mehr, '2')
         'Für Wort = she\n'], 's');
     Gegenstand2= input(['\n \n Handelt es sich beim zweiten Suchbegriff um einen Sprecher, Satz, Phonem oder Wort?\n'],'s');
     wort2= input(['\n\n Geben sie den dazugehörigen Suchbegriff an, nach dem gesucht werden soll!\n',...
-        'Die Eingabe erfolgt entsprechend mit den Parametern:\n',...
-        'Für Wort = Wort \n',...
-        'Für Phone = Phonem\n',...
-        'Für Sprecher = Sprecher\n',...
-        'Für Satz = Satz\n'],'s');
+       'Z.B. Für Sprecher = dr1-fvmh0\n Für Phonem = iy \n',...
+        'Für Satz = she had your dark suit in greasy wash water all year\n',...
+        'Für Wort = she\n'], 's');
     % Setzt einen Flag, um eine falsche Eingabe zu erkennen
     EingabenKontrolle = 1;
     % Überprüft die Eingabe nach dem Parameter Wort/Satz in dem Cell-Array...
@@ -140,7 +138,7 @@ if strcmp(mehr, '2')
     % Gegenstand1 und führt, falls vorhanden, die Funktion sp für das Cell-...
     % Array wort1 durch
     if strcmp(Gegenstand1, 'Sprecher');
-        sp(wort1,sentence);
+        Sprecher(wort1,sentence);
         % Setzt Flag auf Null, wenn Bedingung eingetroffen
         EingabenKontrolle = 0;
     end
@@ -149,14 +147,14 @@ if strcmp(mehr, '2')
         fprintf('Die Eingabe ist ungültig \n');
     end
     % Setzt einen Flag, um eine falsche Eingabe zu erkennen
-    EingabenKontrolle = 1;
+    EingabenKontrolle2 = 1;
     % Überprüft die Eingabe nach dem Parameter Wort/Satz in dem Cell-Array...
     % Gegenstand2 und führt, falls vorhanden, die Funktion Satz für das Cell-...
     % Array wort2 durch
     if  strcmp(Gegenstand2, 'Wort') || strcmp(Gegenstand2, 'Satz');
         Satz(wort2,sentence);
         % Setzt Flag auf Null, wenn Bedingung eingetroffen
-        EingabenKontrolle = 0;
+        EingabenKontrolle2 = 0;
     end
     % Überprüft die Eingabe nach dem Parameter Phonem in dem Cell-Array...
     % Gegenstand2 und führt, falls vorhanden, die Funktion Phonem für das Cell-...
@@ -164,18 +162,18 @@ if strcmp(mehr, '2')
     if strcmp(Gegenstand2, 'Phonem');
         Phonem(wort2,sentence);
         % Setzt Flag auf Null, wenn Bedingung eingetroffen
-        EingabenKontrolle = 0;
+        EingabenKontrolle2 = 0;
     end
     % Überprüft die Eingabe nach dem Parameter Sprecher in dem Cell-Array...
     % Gegenstand2 und führt, falls vorhanden, die Funktion sp für das Cell-...
     % Array wort2 durch
     if strcmp(Gegenstand2, 'Sprecher');
-        sp(wort2,sentence);
+        Sprecher(wort2,sentence);
         % Setzt Flag auf Null, wenn Bedingung eingetroffen
-        EingabenKontrolle = 0;
+        EingabenKontrolle2 = 0;
     end
     % Überprüfung der Flags
-    if EingabenKontrolle == 1;
+    if EingabenKontrolle2 == 1;
         fprintf('Die Eingabe ist ungültig \n');
     end
 end
