@@ -44,7 +44,7 @@ if isempty(right) == 0  %%Bedingung für Ausgabe
                 'ColumnFormat', columnformat,...                  %Spaltenformat                                                                  
                 'ColumnEditable', [false false true],...          %Benutzereditierbarkeit
                 'CellEditCallback', {@playCheckedFile,right},...%Benutzerkontrollierter Aufruf
-                 'Position', [20 20 700 300]);                %Postion von Tabelle
+                 'Position', [20 20 300 300]);                %Postion von Tabelle
         
 
       %Erstellung und Ausrichtung von Überschrift
