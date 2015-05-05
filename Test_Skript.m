@@ -4,6 +4,7 @@
 
 %%
 % Eingabeparameter für die Funktionen
+
 % Die Eingabeparameter werden randomisiert erstellt aus der liste 'sentence'
 
 liste_laden = load('sentence.mat');

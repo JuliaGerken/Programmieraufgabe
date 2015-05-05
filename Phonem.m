@@ -5,6 +5,10 @@ function Phonem(wort,sentence)
 %
 % Output Parameter:
 % phonem:            Cell-Array mit den Treffern der Suchbegriff
+% Funktionen, die benÃ¶tigt werden:
+%   playCheckedFile.m
+% Variablen, die benÃ¶tigt werden:
+%   sentence = Der Inhalt der Datenbank 'TIMIT MIT' in einem Cell-Array(160x4)
 
 %------------------------------------------------------------------------
 %Schleife zur Suche nach Phonem
@@ -21,13 +25,13 @@ end
 
 %% ausgabe phonem
 
-if isempty(phonem) == 0 %Bedinung für Ausgabe
-    %Überschrift von Tabelle
+if isempty(phonem) == 0 %Bedinung fÃ¼r Ausgabe
+    %Ãœberschrift von Tabelle
      Ausgabe1=['Das/Die gesuchte/n Phonem/e ' '"'   wort  '"'...
          ' wird/werden von folgenden Sprecher im jeweiligen Satz verwendet:'];
 
     %Erstelllung von figure
-    f = figure('Position',[440 500 600 200]);
+    f = figure('Position',[440 500 600 400]);
 
     columnformat = {'numeric','bank','logical'};
     
@@ -38,7 +42,7 @@ if isempty(phonem) == 0 %Bedinung für Ausgabe
 
     % Erstellung von Tabelle
     t = uitable(f,'Data',phonem,... %Daten
-        'ColumnName',{'SPrecher','Satzindex','Play'},... %Spaltenüberschriften
+        'ColumnName',{'SPrecher','Satzindex','Play'},... %SpaltenÃ¼berschriften
         'ColumnFormat', columnformat,...             %Spaltenformat
         'ColumnEditable', [false false true],...     %Benutzereditierbarkeit 
         'CellEditCallback', {@playCheckedFile,phonem},...%Benutzerkontrollierter Aufruf
@@ -47,10 +51,10 @@ if isempty(phonem) == 0 %Bedinung für Ausgabe
     % Ausrichtung von Tabelle
     tableextent = get(t,'Extent');
     oldposition = get(t,'Position');
-    newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)];
+    newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)-(length(phonem)*13.59)];
     set(t, 'Position', newposition);
     
-    %Erstellung und Ausrichtung von Überschrift
+    %Erstellung und Ausrichtung von Ãœberschrift
     uicontrol('style', 'text', 'string', Ausgabe1, 'position', [newposition(1) ...
     newposition(1)+newposition(4) newposition(3) 50])
 end
