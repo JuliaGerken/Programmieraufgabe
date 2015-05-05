@@ -1,7 +1,7 @@
 #README
 ## Für das Skript zur Durchsuchung der Datenbank 'TIMIT MIT'
 
-##**Was tut das Skript?** \
+##**Was tut das Skript?** 
 Es handelt sich um das Skript 'ProgrammaufgabeDatenbankPiekerKirschnerGerken' dient zur Durchsuchung der Datenbank.
 Die Anwendung ist benutzerfreundlich und erfolgt durch Eingabe von zwei Parametern.
 Nach Aufforderung, der Eingabe nach was gesucht werden soll, wird durch Eingabe ausgewählt, ob nach einem Sprecher, einem Satz, einem Phonem oder nach einem Wort gesucht werden soll. Es kann zusätzlich nach zwei Suchbegriffen gleichzeitig gesucht werden.
