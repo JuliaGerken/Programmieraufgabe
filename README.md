@@ -7,7 +7,7 @@ Die Anwendung ist benutzerfreundlich und erfolgt durch Eingabe von zwei Paramete
 Nach Aufforderung, der Eingabe nach was gesucht werden soll, wird durch Eingabe ausgewählt, ob nach einem Sprecher, einem Satz, einem Phonem oder nach einem Wort gesucht werden soll. Es kann zusätzlich nach zwei Suchbegriffen gleichzeitig gesucht werden.
 Danach erfolgt die Aufforderung einen genauen Suchbegriff zu definieren.
 In dieser Eingabe wird das zu suchende Objekt eingegeben.
-Danach erfolgt die Ausgabe in einem sepertaen Fenster. Mittels dieser Angaben kann eine Übersicht der Datenbank erfolgen. Zusätzlich bietet das Programm die Möglichkeit, durch Auswahl, die entsprechenden Wav-Dateien abzuspielen
+Danach erfolgt die Ausgabe in einem sepertaen Fenster, das an die Ausgabe manuel angepasst werden muss. Mittels dieser Angaben kann eine Übersicht der Datenbank erfolgen. Zusätzlich bietet das Programm die Möglichkeit, durch Auswahl, die entsprechenden Wav-Dateien abzuspielen
 
 #**Was liegt wo?**
 In der zu durchsuchenden Datenbank liegen verschiedene Ordner, die nach den Sprechern bennant wurde.
