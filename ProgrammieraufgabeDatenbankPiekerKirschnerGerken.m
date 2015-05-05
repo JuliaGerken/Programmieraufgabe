@@ -12,6 +12,7 @@
 % Sprecher = Sprecher, Wort = Wort, Satz = Satz, Phonem= Phonem
 % Den genauen Suchebegriff
 % Die Ausgabe erfolgt in Form einer Tabelle
+
 clear all;
 close all;
 clc;
