@@ -12,7 +12,6 @@
 % Sprecher = Sprecher, Wort = Wort, Satz = Satz, Phonem= Phonem
 % Den genauen Suchebegriff
 % Die Ausgabe erfolgt in Form einer Tabelle
-
 clear all;
 close all;
 clc;
@@ -115,7 +114,7 @@ if strcmp(mehr, '2')
         'Für Wort = she\n'], 's');
     Gegenstand2= input(['\n \n Handelt es sich beim zweiten Suchbegriff um einen Sprecher, Satz, Phonem oder Wort?\n'],'s');
     wort2= input(['\n\n Geben sie den dazugehörigen Suchbegriff an, nach dem gesucht werden soll!\n',...
-       'Z.B. Für Sprecher = dr1-fvmh0\n Für Phonem = iy \n',...
+        'Z.B. Für Sprecher = dr1-fvmh0\n Für Phonem = iy \n',...
         'Für Satz = she had your dark suit in greasy wash water all year\n',...
         'Für Wort = she\n'], 's');
     % Setzt einen Flag, um eine falsche Eingabe zu erkennen
