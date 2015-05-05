@@ -5,6 +5,10 @@ function Sprecher(wort,sentence)
 %
 % Output Parameter:
 % right:            Cell-Array mit den Treffern der Suchbegriff
+% Funktionen, die benÃ¶tigt werden:
+%   playCheckedFile.m
+% Variablen, die benÃ¶tigt werden:
+%   sentence = Der Inhalt der Datenbank 'TIMIT MIT' in einem Cell-Array(160x4)
 
 %------------------------------------------------------------------------ 
 sp ={};
@@ -25,7 +29,7 @@ end
 
 %Schleife zur Bestimmung von Herkunft von Sprecher
 if isempty(sp) == 0 %Schleifenbedingung
-    dr={'dr1', 'dr2','dr3','dr4','dr5','dr6','dr7','dr8'};%Index für Herkunft
+    dr={'dr1', 'dr2','dr3','dr4','dr5','dr6','dr7','dr8'};%Index fÃ¼r Herkunft
     dialect_reg={'New England', 'Northern', 'North Midland', 'South Midland', 'Southern',...
         'New York City', 'Western', 'Army Brat (moved around)'};%Herkunft
     dialect={};                             
@@ -39,10 +43,10 @@ end
 
 %% Ausgabe
 
-if isempty(sp) == 0 %Bedinung für Ausgabe
-    %Überschrift von Tabelle
+if isempty(sp) == 0 %Bedinung fÃ¼r Ausgabe
+    %Ãœberschrift von Tabelle
     Ausgabe1=['Der gesuchte Sprecher ' '"'   wort  '"'...
-        ' kommt aus der Region "' speaker_reg '" und sagt die Sätze:' ];
+        ' kommt aus der Region "' speaker_reg '" und sagt die SÃ¤tze:' ];
     
     %Erstellung von figure
     f = figure('Position',[440 500 600 200]);
@@ -53,7 +57,7 @@ if isempty(sp) == 0 %Bedinung für Ausgabe
         sen{k,3}=false;
     end
     
-    % neue Indizierung für Aufruf von @playCheckedFile 
+    % neue Indizierung fÃ¼r Aufruf von @playCheckedFile 
     name={};
     for k=1:length(sen)
         name{k,1} = sp{1,1};  %Sprecher
@@ -62,7 +66,7 @@ if isempty(sp) == 0 %Bedinung für Ausgabe
     
     %Erstellung von Tabelle
     t = uitable(f,'Data',sen,... %Daten
-        'ColumnName',{'Satzindex','Satz','Play'},... %Spaltenüberschriften
+        'ColumnName',{'Satzindex','Satz','Play'},... %SpaltenÃ¼berschriften
         'ColumnFormat', columnformat,...             %Spaltenformat
         'ColumnEditable', [false false true],...     %Benutzereditierbarkeit
         'CellEditCallback', {@playCheckedFile,name},...%Benutzerkontrollierter Aufruf
@@ -77,7 +81,7 @@ if isempty(sp) == 0 %Bedinung für Ausgabe
     newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)-10];
     set(t, 'Position', newposition);
     
-    % Erstellung und Ausrichtung von Überschrift
+    % Erstellung und Ausrichtung von Ãœberschrift
     uicontrol('style', 'text', 'string', Ausgabe1, 'position', [newposition(1) ...
         newposition(1)+newposition(4) newposition(3) 50]);
 end
