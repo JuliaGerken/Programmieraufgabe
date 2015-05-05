@@ -61,7 +61,7 @@ Z.B. Für Sprecher = dr1-fvmh0
  Für Phonem = iy 
 Für Satz = she had your dark suit in greasy wash water all year
 Für Wort = she
->>she
+>she
 
  
  Handelt es sich beim zweiten Suchbegriff um einen Sprecher, Satz, Phonem oder Wort?
