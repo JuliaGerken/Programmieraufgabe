@@ -49,7 +49,7 @@ if isempty(sp) == 0 %Bedinung für Ausgabe
         ' kommt aus der Region "' speaker_reg '" und sagt die Sätze:' ];
     
     %Erstellung von figure
-    f = figure('Position',[440 500 600 200]);
+    f = figure('Position',[440 500 600 400]);
     columnformat = {'numeric','bank','logical'};
     
     %Erzeugung neuer Spalte zur Indizierung der Tickbox
