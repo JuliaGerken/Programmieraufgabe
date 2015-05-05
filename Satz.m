@@ -1,15 +1,19 @@
 function Satz(wort,sentence)
 % Ein Funktion um die Datenbank nach einem Satz oder Wort zu durchsuchen
 % Input Parameter:
-% wort:             Der eingebene Suchbegriff 
-%
+% wort:             Der eingebene Suchbegriff
 % Output Parameter:
 % right:            Cell-Array mit den Treffern der Suchbegriff
+% Funktionen, die benÃ¶tigt werden:
+%   playCheckedFile.m
+% Variablen, die benÃ¶tigt werden:
+%   sentence = Der Inhalt der Datenbank 'TIMIT MIT' in einem Cell-Array(160x4)
+
 
 %------------------------------------------------------------------------ 
 right= {};
 k=0;
-% for-Schleife, um die erste Spalte mit 160 Cell-Einträgen zu durchsuchen
+% for-Schleife, um die erste Spalte mit 160 Cell-EintrÃ¤gen zu durchsuchen
 for r = 1:160
     a = regexp(sentence{r,4},wort,'match');
             if isempty(a) == 0  
@@ -19,9 +23,9 @@ for r = 1:160
             end                
 end
     
-if isempty(right) == 0  %%Bedingung für Ausgabe      
+if isempty(right) == 0  %%Bedingung fÃ¼r Ausgabe      
     
-    %Überschrift von Tabelle
+    %Ãœberschrift von Tabelle
     Ausgabe1=['Das/Die gesuchte/n Wort/e ' '"'   wort  '"'...
         ' wird/werden von folgenden Sprecher im jeweiligen Satz verwendet:'];
      
@@ -36,7 +40,7 @@ if isempty(right) == 0  %%Bedingung für Ausgabe
     
     %Erstellung von Tabelle
     t = uitable(f,'Data',right,... %Daten
-                'ColumnName',{'Sprecher','Satzindex', 'Play'},... %Spaltenüberschriften
+                'ColumnName',{'Sprecher','Satzindex', 'Play'},... %SpaltenÃ¼berschriften
                 'ColumnFormat', columnformat,...                  %Spaltenformat                                                                  
                 'ColumnEditable', [false false true],...          %Benutzereditierbarkeit
                 'CellEditCallback', {@playCheckedFile,right},...%Benutzerkontrollierter Aufruf
@@ -48,7 +52,7 @@ if isempty(right) == 0  %%Bedingung für Ausgabe
     newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)];
     set(t, 'Position', newposition);
     
-    %Erstellung und Ausrichtung von Überschrift
+    %Erstellung und Ausrichtung von Ãœberschrift
     uicontrol('style', 'text', 'string', Ausgabe1, 'position', [newposition(1) ...
         newposition(1)+newposition(4) newposition(3) 50])
 end    
