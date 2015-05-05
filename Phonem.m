@@ -31,7 +31,7 @@ if isempty(phonem) == 0 %Bedinung für Ausgabe
          ' wird/werden von folgenden Sprecher im jeweiligen Satz verwendet:'];
 
     %Erstelllung von figure
-    f = figure('Position',[440 500 600 200]);
+    f = figure('Position',[440 500 600 400]);
 
     columnformat = {'numeric','bank','logical'};
     
@@ -51,7 +51,7 @@ if isempty(phonem) == 0 %Bedinung für Ausgabe
     % Ausrichtung von Tabelle
     tableextent = get(t,'Extent');
     oldposition = get(t,'Position');
-    newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)];
+    newposition = [oldposition(1) oldposition(2) tableextent(3) tableextent(4)-(length(phonem)*13.59)];
     set(t, 'Position', newposition);
     
     %Erstellung und Ausrichtung von Überschrift
